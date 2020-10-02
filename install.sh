@@ -1,103 +1,129 @@
 #!/usr/bin/env bash
 
-#    _____  _   _  _    _   _       _____  _   _  _    _ __   __
-#   / ____|| \ | || |  | | | |     |_   _|| \ | || |  | |\ \ / /
-#  | |  __ |  \| || |  | | | |       | |  |  \| || |  | | \ V / 
-#  | | |_ || . ` || |  | | | |       | |  | . ` || |  | |  > <  
-#  | |__| || |\  || |__| | | |____  _| |_ | |\  || |__| | / . \ 
-#   \_____||_| \_| \____/  |______||_____||_| \_| \____/ /_/ \_\
-#                                                               
-#                                                               
+#                  _____  _   _ _   _   _     _                           
+#                 |  __ \| \ | | | | | | |   (_)                          
+#                 | |  \/|  \| | | | | | |    _ _ __  _   ___  __         
+#                 | | __ | . ` | | | | | |   | | '_ \| | | \ \/ /         
+#                 | |_\ \| |\  | |_| | | |___| | | | | |_| |>  <          
+#                  \____/\_| \_/\___/  \_____/_|_| |_|\__,_/_/\_\         
+#                                                                         
+#                                                                     
+#            ______      _          _____      _                     
+#            |  _  \    | |        /  ___|    (_)                    
+#            | | | |__ _| |_ __ _  \ `--.  ___ _  ___ _ __   ___ ___ 
+#            | | | / _` | __/ _` |  `--. \/ __| |/ _ \ '_ \ / __/ _ \
+#            | |/ / (_| | || (_| | /\__/ / (__| |  __/ | | | (_|  __/
+#            |___/ \__,_|\__\__,_| \____/ \___|_|\___|_| |_|\___\___|
+#                                                                    
+#                                                                    
+#             _    _            _        _        _   _              
+#            | |  | |          | |      | |      | | (_)             
+#            | |  | | ___  _ __| | _____| |_ __ _| |_ _  ___  _ __   
+#            | |/\| |/ _ \| '__| |/ / __| __/ _` | __| |/ _ \| '_ \  
+#            \  /\  / (_) | |  |   <\__ \ || (_| | |_| | (_) | | | | 
+#             \/  \/ \___/|_|  |_|\_\___/\__\__,_|\__|_|\___/|_| |_| 
+                                                                    
+#                   GNU Linux Data Science Workstation
+
+
+
+
+# Use this on a fresh install of Ubuntu 20.04 to unlock the power of open
+# source data science tools. 
+
+# Be the change...
+			                             # ...Don't be racist.
+
+# Take Notice: All packages installed with `apt` are vetted by Debian and
+# Canonicial. They are secure. If any security breaches are discovered with
+# the following packages, rest assured a patch will be deployed in a timely 
+# manner.
+
+
+
+#             ____ ____ ____ ____ __ _ ____ __  __   __   ____ 
+#            (  __) ___) ___|  __|  ( (_  _|  )/ _\ (  ) / ___)
+#             ) _)\___ \___ \) _)/    / )(  )(/    \/ (_/\___ \
+#            (____|____(____(____)_)__)(__)(__)_/\_/\____(____/
 # 
-#   _____          _            _____        _                          __          __           _          _          _    _               
-#  |  __ \        | |          / ____|      (_)                         \ \        / /          | |        | |        | |  (_)              
-#  | |  | |  __ _ | |_  __ _  | (___    ___  _   ___  _ __    ___  ___   \ \  /\  / /___   _ __ | | __ ___ | |_  __ _ | |_  _   ___   _ __  
-#  | |  | | / _` || __|/ _` |  \___ \  / __|| | / _ \| '_ \  / __|/ _ \   \ \/  \/ // _ \ | '__|| |/ // __|| __|/ _` || __|| | / _ \ | '_ \ 
-#  | |__| || (_| || |_| (_| |  ____) || (__ | ||  __/| | | || (__|  __/    \  /\  /| (_) || |   |   < \__ \| |_| (_| || |_ | || (_) || | | |
-#  |_____/  \__,_| \__|\__,_| |_____/  \___||_| \___||_| |_| \___|\___|     \/  \/  \___/ |_|   |_|\_\|___/ \__|\__,_| \__||_| \___/ |_| |_|
-#                                                                                                                                           
-
-# GNU Linux Data Science Workstation
-
-# Use this on a fresh install of Ubuntu 20.04 to gain all the awesome power of open source data science tools.
-# Be the change. Be the wizard. Just be awesome. Don't be racist.
-
-# Take Notice: All packages installed with `apt` are vetted by Debian and Canonicial. 
-# They are secure. If any security breaches are discovered with the following packages, 
-# rest assured a patch will be deployed in a timely manner.
+#            Essential packages for R, Python, Scala and Julia.
 
 
-# ____ ____ ____ ____ _  _ ___ _ ____ _    ____ 
-# |___ [__  [__  |___ |\ |  |  | |__| |    [__  
-# |___ ___] ___] |___ | \|  |  | |  | |___ ___] 
-#                                               
 
-# Essential packages for R, Python, Scala and Julia to work correctly.
+# These are four common languages used in data science and machine learning.
+# A brief description and the use cases for each language is given below:
 
-sudo apt update -y && sudo apt upgrade -y  # Update package list. Download and install any updates.
+# Julia: The best math/stats/machine learning language.
+# Python: ...
+# R ...
+# Scala
+
+# Update package list. Download and install any updates.
+
+sudo apt update -y && sudo apt upgrade -y  
 
 sudo apt install \
- 	apt-transport-https \                   # Required by R Packages
-    apt-utils \                             # Required by R Packages
-    build-essential \                       # Required by R Packages
-    ca-certificates \                       # Required by R Packages
-    clang \                                 # Required by R Packages
-    clang-format \                          # Required by R Packages
-    clang-tidy \                            # Required by R Packages
-    cmake \                                 # Required by R Packages
-    cmake-qt-gui \                          # Required by R Packages
-    curl \                                  # Download things, needed by R
-    g++-multilib \                          # Required by R Packages.
-    gfortran \                              # Required by R Packages.
-    gnupg-agent \                           # GNU privacy guard
-	julia \                                 # The best math/stats/machine learning language.
-    libboost-dev \                          # Required by R Packages. 
-    libboost-filesystem-dev \               # Required by R Packages. 
-    libboost-program-options-dev \          # Required by R Packages. 
-    libboost-system-dev \                   # Required by R Packages. 
-    libcurl4-openssl-dev \                  # Required by R Packages. 
-    libelf-dev \                            # Required by R Packages.  
-    libfftw3-dev \                          # Required by R Packages. 
-    libncurses5-dev \                       # Required by R Packages. 
-    libpthread-stubs0-dev \                 # Required by R Packages. 
-    libssl-dev \                            # Required by R Packages. 
-    libunwind-dev \                         # Required by R Packages. 
-    nodejs \                                # Node is required by JupyterLab for extensions.
-    npm \                                   # Required by JupyterLab extensions.
-    pkg-config \                            # Required by R Packages.  
-    python3-pip \                           # Python package manager
-    r-base \                                # R statistical programming language
-    rpm \                                   # Red Hat package manager
-    scala \                                 # Data engineering language for the JVM
-    wget                                    # Download things, needed by many R packages
+	apt-transport-https \
+        apt-utils \          
+        build-essential \    
+        ca-certificates \    
+        clang \              
+        clang-format \       
+        clang-tidy \         
+        cmake \              
+        cmake-qt-gui \       
+        curl \                                  
+        g++-multilib \                         
+        gfortran \                            
+        gnupg-agent \                        
+	julia \                             
+        libboost-dev \                          
+        libboost-filesystem-dev \               
+        libboost-program-options-dev \          
+        libboost-system-dev \                   
+        libcurl4-openssl-dev \                  
+        libelf-dev \                            
+        libfftw3-dev \                          
+        libncurses5-dev \                       
+        libpthread-stubs0-dev \                 
+        libssl-dev \                            
+        libunwind-dev \                         
+        nodejs \                          
+        npm \                              
+        pkg-config \                            
+        python3-pip \                       
+        r-base \                             
+	rpm \                                 
+	scala \                                
+	wget                                    
 
 # Essential Quality of Life Improving Packages:
 
 sudo apt install \
-    deja-dup \                              # GNOME backup manager
-    flatpak \                               # Secure, containerized apps.
-    git \                                   # Version control.
-    glances \                               # Awesome system stats.
-    gnome-firmware \                        # Firmware updater.
-    gnome-software-plugin-flatpak \         # Install flatpak packages from GNOME software GUI.
-    gnome-tweaks \                          # Extra settings for making GNOME your own.
-    gnome-usage \                           # Beautiful system resources app.
-    hardinfo \                              # Information about your hardware.
-    htop \                                  # System stats
-    ranger \                                # Column-based file manager for the terminal, similar to macOS Finder
-    software-properties-common \            # Required by GNOME software
-    ssh \                                   # Secure Shell
+	deja-dup \                              # GNOME backup manager
+	flatpak \                               # Secure, containerized apps.
+	git \                                   # Version control.
+	glances \                               # Awesome system stats.
+	gnome-firmware \                        # Firmware updater.
+	gnome-software-plugin-flatpak \         # Install flatpak packages from GNOME software GUI.
+	gnome-tweaks \                          # Extra settings for making GNOME your own.
+	gnome-usage \                           # Beautiful system resources app.
+	hardinfo \                              # Information about your hardware.
+	htop \                                  # System stats
+	ranger \                                # Column-based file manager for the terminal, similar to macOS Finder
+	software-properties-common \            # Required by GNOME software
+	ssh \                                   # Secure Shell
 	sqlitebrowser \                         # View sqlite database files.
-    tig \                                   # Awesome git tool for the command line
-    ttf-mscorefonts-installer \             # Microsoft's pesky fonts
-    vim \                                   # Modal text editing
-    visidata                                # Who needs Excel? This is the fastest spreadsheet app for the console. Tip: The command is vd.
+	tig \                                   # Awesome git tool for the command line
+	ttf-mscorefonts-installer \             # Microsoft's pesky fonts
+	vim \                                   # Modal text editing
+	visidata                                # Who needs Excel? This is the fastest spreadsheet app for the console. Tip: The command is vd.
 
-
-# ___  ____ ____ _  _ ____ ____ 
-# |  \ |  | |    |_/  |___ |__/ 
-# |__/ |__| |___ | \_ |___ |  \ 
-# 
+#          ____  __   ___ __ _ ____ ____ 
+#         (    \/  \ / __(  / (  __(  _ \
+#          ) D (  O ( (__ )  ( ) _) )   /
+#         (____/\__/ \___(__\_(____(__\_)
+#         
 
 # Docker
 
@@ -139,13 +165,13 @@ sudo lspci | grep NVIDIA >/dev/null && CARD=NVIDA || CARD=FALSE
 # card is found, we skip to the next part.
 
 if [ "$CARD" == AMD ]; then 
-    echo "AMD graphics card detected."
-    ./amd.sh;
+	echo "AMD graphics card detected."
+	./amd.sh;
 elif [ "$CARD" == NVIDIA ]; then
-    echo "NVIDIA graphics card detected."
-    ./nvidia.sh;
+	echo "NVIDIA graphics card detected."
+	./nvidia.sh;
 else
-    echo "No discrete graphics card detected."
+	echo "No discrete graphics card detected."
 fi
 
 
@@ -174,61 +200,61 @@ sudo apt install --fix-broken  # This will complete the install.
 
 
 pip3 install --user \
-    astrowidgets \                           # Widgets for the Jupyter notebook and JupyterLab
-    databrickslabs-jupyterlab \              # Remote JupyterLab kernel for Databricks
-    floatview \                              # A floatview output widget for JupyterLab + GlueViz Visualization with plotly
-    gcp-jupyterlab-shared \                  # Shared libraries for JupyterLab extensions
-    jupyter-dojo \                           # A JupyterLab and Jupyter Notebook extension for rendering unittest results
-    jupyter-project \                        # An JupyterLab extension to handle project and files templates.
-    jupyterlab \
-    jupyterlab-autoversion \                 # Automatically version jupyter notebooks on save
-    jupyterlab-black \                       # The server extension for jupyterlab_black, to apply the black formatter to codecell content.
-    jupyterlab-bookmarks-extension \         # A JupyterLab extension to provide Launcher icons for favorites. Allows 'bookmarking' files for quick access from the Launcher.
-    jupyterlab-celltests \                   # Cell-by-cell tests for JupyterLab
-    jupyterlab-cognos-dashboard-embedded \   # 
-    jupyterlab-commands \                    # Arbitrary python commands for notebooks in JupyterLab
-    jupyterlab-commenting-service \
-    jupyterlab-dash \                        # A JupyterLab extensions for rendering Plotly Dash apps
-    jupyterlab-discovery \                   # A JupyterLab extension to facilitate the discovery and installation of other extensions
-    jupyterlab-downloadfolder \              # Plugin JupyterLab for Downloading a folder as archive
-    jupyterlab-email \                       # Sending emails from JupyterLab
-    jupyterlab-geojs \                       # A package for rendering GeoJS scenes in JupyterLab
-    jupyterlab-git \                         # A server extension for JupyterLab's git extension
-    jupyterlab-github \                      # A Jupyter Notebook server extension which acts a proxy for the GitHub API.
-    jupyterlab-gitlab \                      # A Jupyter Notebook server extension which acts as a proxy for the GitLab API.
-    jupyterlab-gitplus \                     # JupyterLab extension to create GitHub pull requests
-    jupyterlab-hdf \                         # A Jupyter Notebook server extension that provides APIs for fetching hdf5 contents and data. Built on h5py.
-    jupyterlab-latex \                       # A Jupyter Notebook server extension which acts as an endpoint for LaTeX.
-    jupyterlab-launcher \                    # Jupyter Launcher
-    jupyterlab-nbconvert-nocode \            # A simple helper library with 2 NBConvert exporters for PDF/HTML export with no code cells
-    jupyterlab-nvdashboard \                 # A JupyterLab extension for displaying dashboards of GPU usage.
-    jupyterlab-powerpoint \                  # Create powerpoints from jupyter notebooks
-    jupyterlab-pullrequests \                # A server extension for JupyterLab's pull request extension
-    jupyterlab-pygments \                    # Pygments theme using JupyterLab CSS variables
-    jupyterlab-python-file \                 # Create Python Files from JupyterLab
-    jupyterlab-quickopen \                   # Quickly open a file in JupyterLab by typing part of its name
-    jupyterlab-s3-browser \                  # A Jupyter server extension for the JupyterLab S3 Browser extension
-    jupyterlab-scheduler \                   # CRON scheduler for Jupyter Lab
-    jupyterlab-server \
-    jupyterlab-snippets \                    # Code Snippets Extension for JupyterLab
-    jupyterlab-snippets-multimenus \ 
-    jupyterlab-spark-ui-tab \                # Spark UI extension for jupyterlab
-    jupyterlab-sparkmonitor \                # Spark Monitor Extension for Jupyter Lab
-    jupyterlab-sql \                         # JupyterLab plugin for visualizing SQL databases
-    jupyterlab-templates \                   # Notebook templates
-    jupyterlab-translate \                   # Jupyterlab Language Pack Translations Helper
-    jupyterlab-widgets \                     # JupyterLab extension providing HTML widgets
-    jupyterlab-zip \                         # Zip and download folder contents
-    knowledgelab \                           # Knowledge Repo integration for JupyterLab
-    matplotlib \
-    mavenworks \                             # Dashboarding for JupyterLab
-    multicontentsmanager \                   # Automatically version notebooks from JupyterLab
-    nbcelltests \                            # Cell-by-cell tests for JupyterLab
-    notebook-snippets \                      # code snippets integration for JupyterLab
-    perspective-python \                     # Python bindings and JupyterLab integration for Perspective
-    sidecar \                                # A sidecar output widget for JupyterLab
-    tensorflow \
-    tfds-nightly                             # Tensorflow datasets for experimenting
+	astrowidgets \                           # Widgets for the Jupyter notebook and JupyterLab
+	databrickslabs-jupyterlab \              # Remote JupyterLab kernel for Databricks
+	floatview \                              # A floatview output widget for JupyterLab + GlueViz Visualization with plotly
+	gcp-jupyterlab-shared \                  # Shared libraries for JupyterLab extensions
+	jupyter-dojo \                           # A JupyterLab and Jupyter Notebook extension for rendering unittest results
+	jupyter-project \                        # An JupyterLab extension to handle project and files templates.
+	jupyterlab \
+	jupyterlab-autoversion \                 # Automatically version jupyter notebooks on save
+	jupyterlab-black \                       # The server extension for jupyterlab_black, to apply the black formatter to codecell content.
+	jupyterlab-bookmarks-extension \         # A JupyterLab extension to provide Launcher icons for favorites. Allows 'bookmarking' files for quick access from the Launcher.
+	jupyterlab-celltests \                   # Cell-by-cell tests for JupyterLab
+	jupyterlab-cognos-dashboard-embedded \   # 
+	jupyterlab-commands \                    # Arbitrary python commands for notebooks in JupyterLab
+	jupyterlab-commenting-service \
+	jupyterlab-dash \                        # A JupyterLab extensions for rendering Plotly Dash apps
+	jupyterlab-discovery \                   # A JupyterLab extension to facilitate the discovery and installation of other extensions
+	jupyterlab-downloadfolder \              # Plugin JupyterLab for Downloading a folder as archive
+	jupyterlab-email \                       # Sending emails from JupyterLab
+	jupyterlab-geojs \                       # A package for rendering GeoJS scenes in JupyterLab
+	jupyterlab-git \                         # A server extension for JupyterLab's git extension
+	jupyterlab-github \                      # A Jupyter Notebook server extension which acts a proxy for the GitHub API.
+	jupyterlab-gitlab \                      # A Jupyter Notebook server extension which acts as a proxy for the GitLab API.
+	jupyterlab-gitplus \                     # JupyterLab extension to create GitHub pull requests
+	jupyterlab-hdf \                         # A Jupyter Notebook server extension that provides APIs for fetching hdf5 contents and data. Built on h5py.
+	jupyterlab-latex \                       # A Jupyter Notebook server extension which acts as an endpoint for LaTeX.
+	jupyterlab-launcher \                    # Jupyter Launcher
+	jupyterlab-nbconvert-nocode \            # A simple helper library with 2 NBConvert exporters for PDF/HTML export with no code cells
+	jupyterlab-nvdashboard \                 # A JupyterLab extension for displaying dashboards of GPU usage.
+	jupyterlab-powerpoint \                  # Create powerpoints from jupyter notebooks
+	jupyterlab-pullrequests \                # A server extension for JupyterLab's pull request extension
+	jupyterlab-pygments \                    # Pygments theme using JupyterLab CSS variables
+	jupyterlab-python-file \                 # Create Python Files from JupyterLab
+	jupyterlab-quickopen \                   # Quickly open a file in JupyterLab by typing part of its name
+	jupyterlab-s3-browser \                  # A Jupyter server extension for the JupyterLab S3 Browser extension
+	jupyterlab-scheduler \                   # CRON scheduler for Jupyter Lab
+	jupyterlab-server \
+	jupyterlab-snippets \                    # Code Snippets Extension for JupyterLab
+	jupyterlab-snippets-multimenus \ 
+	jupyterlab-spark-ui-tab \                # Spark UI extension for jupyterlab
+	jupyterlab-sparkmonitor \                # Spark Monitor Extension for Jupyter Lab
+	jupyterlab-sql \                         # JupyterLab plugin for visualizing SQL databases
+	jupyterlab-templates \                   # Notebook templates
+	jupyterlab-translate \                   # Jupyterlab Language Pack Translations Helper
+	jupyterlab-widgets \                     # JupyterLab extension providing HTML widgets
+	jupyterlab-zip \                         # Zip and download folder contents
+	knowledgelab \                           # Knowledge Repo integration for JupyterLab
+	matplotlib \
+	mavenworks \                             # Dashboarding for JupyterLab
+	multicontentsmanager \                   # Automatically version notebooks from JupyterLab
+	nbcelltests \                            # Cell-by-cell tests for JupyterLab
+	notebook-snippets \                      # code snippets integration for JupyterLab
+	perspective-python \                     # Python bindings and JupyterLab integration for Perspective
+	sidecar \                                # A sidecar output widget for JupyterLab
+	tensorflow \
+	tfds-nightly                             # Tensorflow datasets for experimenting
 
 
 # ____ _    ____ ___ ___  ____ _  _ 
@@ -246,48 +272,48 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 # Fun stuff:
 
 flatpak install -y \
-    com.github.calo001.fondo \                          # Find unsplash wallpapers
-    com.github.johnfactotum.Foliate \                   # Read a book while your model trains
-    com.github.maoschanz.drawing \                      # Simple drawing tool like MS Paint
-    net.supertuxkart.SuperTuxKart \                     # For racing with coworkers after work.
-    net.veloren.veloren \                               # Is this like Minecraft?
-    org.gnome.Chess \                                   # Play chess while your model trains
-    org.gnome.Polari \                                  # IRC, yes people still use it
-    org.gustavoperedo.FontDownloader \                  # Find some nice fonts
-    org.videolan.VLC                                    # Play any video
+	com.github.calo001.fondo \                          # Find unsplash wallpapers
+	com.github.johnfactotum.Foliate \                   # Read a book while your model trains
+	com.github.maoschanz.drawing \                      # Simple drawing tool like MS Paint
+	net.supertuxkart.SuperTuxKart \                     # For racing with coworkers after work.
+	net.veloren.veloren \                               # Is this like Minecraft?
+	org.gnome.Chess \                                   # Play chess while your model trains
+	org.gnome.Polari \                                  # IRC, yes people still use it
+	org.gustavoperedo.FontDownloader \                  # Find some nice fonts
+	org.videolan.VLC                                    # Play any video
 
 # Serious stuff:
 
 flatpak install -y \
-    ch.openboard.OpenBoard \                            # Whiteboard
-    com.github.alainm23.planner \                       # To do app with todoist integration
-    com.github.artemanufrij.regextester \               # Test your regex
-    com.github.jeromerobert.pdfarranger \               # Rearrange PDFs
-    com.github.junrrein.PDFSlicer \                     # Slice PDFs
-    com.microsoft.Teams \                               # Because we use this
-    com.rafaelmardojai.Blanket \                        # White noise app to help concentrate
-    com.uploadedlobster.peek \                          # Screen recorder, useful for making instructional videos
-    flathub com.gitlab.newsflash \                      # RSS feed reader, stay on top of reserach
-    net.codeindustry.MasterPDFEditor \                  # Do anything to a PDF, proprietary
-    nl.hjdskes.gcolor3 \                                # Pick colors from screen
-    org.cvfosammmm.Setzer \                             # Easy LaTeX editor
-    org.gabmus.notorious \                              # Dead simple notes
-    org.gabmus.whatip \                                  # What is my IP address?
-    org.glimpse_editor.Glimpse \                        # Bitmap image editor
-    org.gnome.Connections \                             # Remote desktop connections
-    org.gnome.GTG \                                     # Getting things done, GNOME style
-    org.gnome.boxes \                                   # Virtual machine manager
-    org.gnome.builder \                                 # IDE for C and GTK apps
-    org.gnome.calendar \                                # GNOME calendar app
-    org.gnome.documents \                               # GNOME document manager
-    org.gnome.gitg \                                    # Graphical Git interface
-    org.gnome.gitlab.somas.Apostrophe \                 # Markdown editor
-    org.gnome.gitlab.somas.Apostrophe.Plugin.TexLive \  # LaTeX support for Apostrophe
-    org.gnome.meld \                                    # View the difference between files, line by line
-    org.gnome.todo \                                    # GNOME todo manager
-    org.inkscape.Inkscape \                             # Vector drawing
-    org.jamovi.jamovi \                                 # Statistical spreadsheet app
-    us.zoom.Zoom                                        # Because we use this
+	ch.openboard.OpenBoard \                            # Whiteboard
+	com.github.alainm23.planner \                       # To do app with todoist integration
+	com.github.artemanufrij.regextester \               # Test your regex
+	com.github.jeromerobert.pdfarranger \               # Rearrange PDFs
+	com.github.junrrein.PDFSlicer \                     # Slice PDFs
+	com.microsoft.Teams \                               # Because we use this
+	com.rafaelmardojai.Blanket \                        # White noise app to help concentrate
+	com.uploadedlobster.peek \                          # Screen recorder, useful for making instructional videos
+	flathub com.gitlab.newsflash \                      # RSS feed reader, stay on top of reserach
+	net.codeindustry.MasterPDFEditor \                  # Do anything to a PDF, proprietary
+	nl.hjdskes.gcolor3 \                                # Pick colors from screen
+	org.cvfosammmm.Setzer \                             # Easy LaTeX editor
+	org.gabmus.notorious \                              # Dead simple notes
+	org.gabmus.whatip \                                  # What is my IP address?
+	org.glimpse_editor.Glimpse \                        # Bitmap image editor
+	org.gnome.Connections \                             # Remote desktop connections
+	org.gnome.GTG \                                     # Getting things done, GNOME style
+	org.gnome.boxes \                                   # Virtual machine manager
+	org.gnome.builder \                                 # IDE for C and GTK apps
+	org.gnome.calendar \                                # GNOME calendar app
+	org.gnome.documents \                               # GNOME document manager
+	org.gnome.gitg \                                    # Graphical Git interface
+	org.gnome.gitlab.somas.Apostrophe \                 # Markdown editor
+	org.gnome.gitlab.somas.Apostrophe.Plugin.TexLive \  # LaTeX support for Apostrophe
+	org.gnome.meld \                                    # View the difference between files, line by line
+	org.gnome.todo \                                    # GNOME todo manager
+	org.inkscape.Inkscape \                             # Vector drawing
+	org.jamovi.jamovi \                                 # Statistical spreadsheet app
+	us.zoom.Zoom                                        # Because we use this
 
 
 # ____ _  _ ____ ___  ____ 
@@ -298,16 +324,16 @@ flatpak install -y \
 # Snaps are Canonical's containerized packages. Very secure, vetted by Canonical.
 
 sudo snap install \
-    chromium \                                          # Google-free Chrome
-    codium \                                            # Completely open source version of VS Code, no spyware.
-    dbeaver-ce \                                        # General purpose database tool.
-    flameshot \                                         # Amazing screenshot tool
-    notable --classic  \                                # Simple and effective markdown note-taking app.
-    onlyoffice-desktopeditors \                         # Better than LibreOffice open source office suite.
-    slack \                                             # Chat, there are open source alternative though.
-    spotify \                                           # Music.
-    telegram-desktop \                                  # Also chat, somewhat like WhatsApp.
-    wps-office                                          # Chinese office suite, very nice, proprietary...
+	chromium \                                          # Google-free Chrome
+	codium \                                            # Completely open source version of VS Code, no spyware.
+	dbeaver-ce \                                        # General purpose database tool.
+	flameshot \                                         # Amazing screenshot tool
+	notable --classic  \                                # Simple and effective markdown note-taking app.
+	onlyoffice-desktopeditors \                         # Better than LibreOffice open source office suite.
+	slack \                                             # Chat, there are open source alternative though.
+	spotify \                                           # Music.
+	telegram-desktop \                                  # Also chat, somewhat like WhatsApp.
+	wps-office                                          # Chinese office suite, very nice, proprietary...
 
 
 # ____ _  _ ___ ____ ____ ____ 
@@ -322,8 +348,8 @@ sudo snap install \
 git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
 
 echo 'if [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ]; then 
-    GIT_PROMPT_ONLY_IN_REPO \=1
-    source \ $HOME/.bash-git-prompt/gitprompt.sh
+	GIT_PROMPT_ONLY_IN_REPO \=1
+	source \ $HOME/.bash-git-prompt/gitprompt.sh
 fi' | tee -a ~/.bashrc 
 
 
