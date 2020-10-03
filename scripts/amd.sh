@@ -26,16 +26,33 @@
 # 
 # drun rocm/tensorflow
 
-
-
 # First we install ROCm:
-
-echo "Installing AMD ROCm and deep learning packages."
 
 cd ~/Downloads
 
 wget -q -O - http://repo.radeon.com/rocm/rocm.gpg.key | sudo apt-key add -
 echo 'deb [arch=amd64] http://repo.radeon.com/rocm/apt/debian/ xenial main' | sudo tee /etc/apt/sources.list.d/rocm.list
+
+sudo apt install rocm-dkms && sudo reboot
+
+sudo apt-get update && \
+	sudo apt-get install -y --allow-unauthenticated \
+	libnuma-dev
+	rocm-dkms rocm-dev rocm-libs rccl \
+	rocm-device-libs \
+	hsa-ext-rocr-dev hsakmt-roct-dev hsa-rocr-dev \
+	rocm-opencl rocm-opencl-dev \
+	rocm-utils 
+
+
+# Add $USER to video and render so we have access to ROCm:
+sudo usermod -a -G video $USER
+sudo usermod -a -G render $USER
+
+# Make it so all new users are automatically added to the required groups:
+echo 'ADD_EXTRA_GROUPS=1'  | sudo tee -a /etc/adduser.conf
+echo 'EXTRA_GROUPS=video'  | sudo tee -a /etc/adduser.conf
+echo 'EXTRA_GROUPS=render' | sudo tee -a /etc/adduser.conf
 
 wget https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS-2019.PUB
 sudo apt-key add GPG-PUB-KEY-INTEL-SW-PRODUCTS-2019.PUB
@@ -43,7 +60,11 @@ sudo sh -c 'echo deb https://apt.repos.intel.com/mkl all main > /etc/apt/sources
 
 sudo apt-get update
 
-sudo apt-get install -y --allow-unauthenticated \
+    rocm-dkms \
+    rocm-dev \
+    rocm-libs \
+    rccl \
+    rocm-device-libs \
     hsa-ext-rocr-dev \
     hsa-rocr-dev \
     hsakmt-roct-dev \
