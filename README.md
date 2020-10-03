@@ -7,3 +7,22 @@ Ubuntu was chosen as the operating system because it is popular with data scient
 This is my take on what a data scientist needs to to their work and produce the best results.
 
 This has been tested on a Dell Precision 7520 and a Dell Precision 7920.
+
+## Instructions
+
+To use first
+
+``` sh
+chmod +x ./install.sh
+
+./install.sh
+```
+
+This will install the first set of packages.
+
+``` 
+0 upgraded, 519 newly installed, 0 to remove and 0 not upgraded.
+Need to get 363 MB of archives.
+After this operation, 1,755 MB of additional disk space will be used.
+Do you want to continue? [Y/n]
+```
