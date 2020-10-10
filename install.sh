@@ -81,6 +81,8 @@ sudo apt install -y \
 	libboost-filesystem-dev \
 	libboost-program-options-dev \
 	libboost-system-dev \
+	libclang-10-dev \
+	libclang-dev \
 	libcurl4-openssl-dev \
 	libelf-dev \
 	libfftw3-dev \
@@ -171,8 +173,7 @@ fi
 
 cd ~/Downloads
 wget https://download1.rstudio.org/desktop/bionic/amd64/rstudio-1.3.1093-amd64.deb
-sudo dpkg -i ./rstudio-1.3.1093-amd64.deb  # Will not complete since there are depencies.
-sudo apt install --fix-broken  # This will complete the install.
+sudo dpkg -i ./rstudio-1.3.1093-amd64.deb
 
 
 #  _ _  _ ___  _   _ ___ ____ ____    _    ____ ___  
@@ -305,6 +306,7 @@ flatpak install -y \
 # Snaps are Canonical's containerized packages. Very secure, vetted by Canonical.
 
 sudo snap install \
+	brave \
 	chromium \
 	codium \
 	dbeaver-ce \
@@ -387,3 +389,12 @@ npm i bash-language-server
 npm install vscode-html-languageserver-bin
 npm install dockerfile-language-server-nodejs
 npm install yaml-language-server
+
+
+# stuff required by packrat:
+sudo apt install -y \
+	texlive \
+	texlive-xetex \
+	libfreetype6-dev \
+	libxml2-dev \
+	pandoc
