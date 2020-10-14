@@ -127,7 +127,7 @@ sudo add-apt-repository \
 
 sudo apt update
 
-sudo apt-get install \
+sudo apt-get install -y \
 	docker-ce \
 	docker-ce-cli \
 	containerd.io
