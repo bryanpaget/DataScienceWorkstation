@@ -282,7 +282,7 @@ flatpak install -y \
 	org.gnome.Connections \
 	org.gnome.GTG \
 	org.gnome.Polari \
-	org.gnome.boxes \
+	org.gnome.Boxes \
 	org.gnome.builder \
 	org.gnome.calendar \
 	org.gnome.documents \
